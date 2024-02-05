@@ -1,15 +1,13 @@
-!/usr/bin/python3
+#!/usr/bin/python3
 
+# Write a function that divides 2 integers and prints the result
 
 def safe_print_division(a, b):
-    """
-    divides two integers and prints the result
-    catches divide by zero exception
-    """
+    div = None
     try:
-        res = a / b
-    except:
-        res = None
+        div = a / b
+    except (ZeroDivisionError, TypeError):
+        pass
     finally:
-        print("Inside result: {}".format(res))
-    return res
+        print("Inside result: {}".format(div))
+        return div
